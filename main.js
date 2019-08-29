@@ -50,9 +50,13 @@ const petCollection = [
 ]
 
 const choosePet = (mammals) => {
+    // created empty string to build card on. Have to be outside of for loop so that whenever arrays are concatenating the string isn't restarted as blank
     let group = '';
+    // fot loop that will keep going as long as it is smaller than the length of the array, goes up by 1
     for (let i=0; i < mammals.length; i++) {
+    // declared an empty box to put each object in
         const selectMammal = mammals[i];
+    // concatenates to emptry string
         group += `
         <div class='buildMammal'>
             <h3>${selectMammal.name}</h3>
@@ -63,14 +67,18 @@ const choosePet = (mammals) => {
         </div>
         `
     }
+    // outside of the for loop so that it only prints once after it finishes concatenating, instead of printing each card every time it gets added to empty string
     printToDOM(group, 'petGroup');
 }
 
 const buttonClick = (e) => {
     // figure out animal from button we click on
+    // selects id of button click and assign to empty variable
     const petID = e.target.id;
     // filter animal to what we want
+    // declare variable for empty array to push array into
     const selectedPet = [];
+    // 
     for (let i=0; i < petCollection.length; i++) {
         const pet = petCollection[i];
         if (petCollection[i].typeOfPet === petID) {   
