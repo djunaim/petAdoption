@@ -1,3 +1,20 @@
 body {
     background-color: lavenderblush;
+    text-align: center;
+}
+
+#petGroup {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.buildMammal {
+    background-color: lightcoral;
+    text-align: center;
+    margin: 10px 10px;
+    width: 300px;
+}
+
+.type {
+    background-color: azure;
 }
