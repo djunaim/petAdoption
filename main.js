@@ -14,7 +14,7 @@ const petCollection = [
     },
     {
         image: 'https://i.pinimg.com/originals/9a/87/44/9a8744953a24fa0f179d9b1d51851fb3.jpg',
-        name: 'buddy',
+        name: 'sad boi',
         color: 'beige',
         specialSkill: 'run really fast',
         typeOfPet: 'dog',
@@ -83,7 +83,7 @@ const buttonClick = (e) => {
         const pet = petCollection[i];
         if (pet.typeOfPet === petID) {   
             selectedPet.push(pet);
-        }
+        } 
     }
     // pass list into empty container to print out
     choosePet(selectedPet);
