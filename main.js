@@ -83,27 +83,21 @@ const buttonClick = (e) => {
         const pet = petCollection[i];
         if (pet.typeOfPet === petID) {   
             selectedPet.push(pet);
-        } 
+        }
     }
     // pass list into empty container to print out
     choosePet(selectedPet);
 }
 
 const allClick = (e) => {
-    // figure out animal from button we click on
-    // selects id of button click and assign to empty variable
     const allPetID = e.target.id;
-    // filter animal to what we want
-    // declare variable for empty array to push array into
     const allThePet = [];
-    // 
     for (let i=0; i < petCollection.length; i++) {
         const thisPet = petCollection[i];
         if (thisPet.typeOfPet !== allPetID) {   
             allThePet.push(thisPet);
         }
     }
-    // pass list into empty container to print out
     choosePet(allThePet);
 }
 
