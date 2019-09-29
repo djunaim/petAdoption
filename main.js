@@ -83,28 +83,30 @@ const buttonClick = (e) => {
         const pet = petCollection[i];
         if (pet.typeOfPet === petID) {   
             selectedPet.push(pet);
+            // pass list into empty container to print out
+            choosePet(selectedPet);
+        } else if (petID === 'all') {
+            choosePet(petCollection);
         }
     }
-    // pass list into empty container to print out
-    choosePet(selectedPet);
-}
+}    
 
-const allClick = (e) => {
-    const allPetID = e.target.id;
-    const allThePet = [];
-    for (let i=0; i < petCollection.length; i++) {
-        const thisPet = petCollection[i];
-        if (thisPet.typeOfPet !== allPetID) {   
-            allThePet.push(thisPet);
-        }
-    }
-    choosePet(allThePet);
-}
+// const allClick = (e) => {
+//     const allPetID = e.target.id;
+//     const allThePet = [];
+//     for (let i=0; i < petCollection.length; i++) {
+//         const thisPet = petCollection[i];
+//         if (thisPet.typeOfPet !== allPetID) {   
+//             allThePet.push(thisPet);
+//         }
+//     }
+//     choosePet(allThePet);
+// }
 
+const init = () => {
 document.getElementById('cat').addEventListener('click', buttonClick);
 document.getElementById('dog').addEventListener('click', buttonClick);
 document.getElementById('dino').addEventListener('click', buttonClick);
-document.getElementById('all').addEventListener('click', allClick);
-
-// choosePet(petCollection);
-
+document.getElementById('all').addEventListener('click', buttonClick);
+}
+init ();
